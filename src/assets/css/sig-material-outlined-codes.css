@@ -1,0 +1,5 @@
+
+.icon-shopping-bag:before { content: '\e800'; } /* '' */
+.icon-shopping-cart:before { content: '\e801'; } /* '' */
+.icon-user:before { content: '\e802'; } /* '' */
+.icon-whatsapp:before { content: '\e803'; } /* '' */
