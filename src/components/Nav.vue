@@ -1,14 +1,14 @@
 <template lang="pug">
   div.nav.nav-hover
-    div.container
+    div.sig-container
       .logo
         img(src="../assets/logo.png")
       .menu
-        a Home
-        a Peluquerías
-        a Promociones
-        a Noticias
-        a Tienda
+        router-link.btn.bg-transparent(to="/") Home
+        router-link.btn.bg-transparent(to="/peluquerias") Peluquerías
+        router-link.btn.bg-transparent(to="/agenda") Agenda
+        router-link.btn.bg-transparent(to="/noticias") Noticias
+        router-link.btn.bg-transparent(to="/tienda") Tienda
       .actions
         a.icon-shopping-bag
         a.icon-user
@@ -17,30 +17,33 @@
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
-.container-nav-base {
+.sig-container-nav-base {
       position: absolute;
       display: flex;
       align-items: center;
       width: 100%;
       height: 64px;
 }
-.container {
+.sig-container {
     width: 100%;
     max-width: 1600px;
     margin: 0 auto;
 }
 .nav {
   width: 100%;
-  height: 64px;
+  height: 88px;
   padding: 12px 0;
   position: absolute;
   transition: 0.25s linear;
   background-color: rgba(255, 255, 255, 0.5);
   z-index: 10000;
-  .container {
+  display: flex;
+  justify-content: center;
+  .sig-container {
     display: flex;
+    position: absolute;
     .logo{
-      @extend .container-nav-base;
+      @extend .sig-container-nav-base;
       justify-content: flex-start;
       img {
         margin: auto 0;
@@ -49,18 +52,22 @@
       }
     }
     .menu {
-      @extend .container-nav-base; 
+      @extend .sig-container-nav-base;
       justify-content: center;
-      a {      
+      a {
         font-family: 'Raleway', sans-serif;
         font-weight: 900;
         font-size: 18px;
         text-align: center;
         margin: auto 6px;
+        z-index: 10001;
+        text-decoration: none;
+        outline-style:none;
+        box-shadow: none;
       }
     }
     .actions {
-      @extend .container-nav-base;
+      @extend .sig-container-nav-base;
       justify-content: flex-end;
       a {
         font-size: 24px;
@@ -77,7 +84,7 @@
 @media only screen and (max-device-width : 1025px) {
   .nav {
     height: 128px;
-    .container {
+    .sig-container {
       .menu {
         justify-content: space-around;
         top: 76px;

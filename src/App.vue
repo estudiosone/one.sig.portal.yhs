@@ -9,6 +9,15 @@
   @import './assets/css/sig-material-outlined.css';
   body {
     margin: 0;
+    position: absolute;
+    width: 100%;
+    height: fit-content;
+    #app {
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    height: fit-content;
+    }
   }
 </style>
 
